@@ -3,6 +3,7 @@ const button = document.getElementById("dog");
 
 const body = document.getElementById("bod");
 
+const selector = document.getElementById("select");
 
 // $.get('https://dog.ceo/api/breeds/list').then(function (data) {
 //     for (let i = 0; i <= data.length; i++) {
@@ -35,9 +36,9 @@ window.addEventListener('DOMContentLoaded', function(){
         .then(function(data) {
             const breeds = data.message;
             for (let i = 0; i <= breeds.length; i++) {
-                const selector = document.getElementById("select");
                 const option1 = document.createElement("option");
-                option1.setAttribute('src', breeds[i]);
+                option1.setAttribute('value', breeds[i]);
+                option1.textContent = breeds[i];
                 console.log(option1);
                 selector.appendChild(option1);
             }
